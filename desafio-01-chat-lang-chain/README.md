@@ -8,8 +8,8 @@
   ![OpenAI](https://img.shields.io/badge/OpenAI-API-412991.svg)
   ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)
     
-    <h3>Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)</h3>
-  
+    Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)
+
 </div>
 
 ---
@@ -72,7 +72,7 @@ cd desafios-tecnicos-MBA-IA
 
 ```bash
 # Navegue até a pasta específica deste projeto
-cd "Ingestão e busca semântica com LangChain e PostgreSQL"
+cd "desafio-01-chat-lang-chain"
 ```
 
 #### 3️⃣ Configure o Ambiente Virtual
@@ -172,7 +172,7 @@ $ python src/chat.py
 
 ```
 desafios-tecnicos-MBA-IA/
-└── 📂 Ingestão e busca semântica com LangChain e PostgreSQL/
+└── 📂 desafio-01-chat-lang-chain/
     │
     ├── 📂 src/                     # Código fonte principal
     │   ├── 📄 chat.py              # Interface CLI e loop principal
