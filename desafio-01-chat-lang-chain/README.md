@@ -8,7 +8,7 @@
   ![OpenAI](https://img.shields.io/badge/OpenAI-API-412991.svg)
   ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)
     
-    Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)
+Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)
 
 </div>
 
