@@ -7,9 +7,9 @@
   ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-336791.svg)
   ![OpenAI](https://img.shields.io/badge/OpenAI-API-412991.svg)
   ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)
+    
+    <h3>Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)</h3>
   
-  <h3>Sistema inteligente de processamento e consulta de documentos PDF usando RAG (Retrieval-Augmented Generation)</h3>
-   
 </div>
 
 ---
@@ -64,11 +64,18 @@ graph TB
 #### 1️⃣ Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/desafios-tecnicos-MBA-IA.git
+git clone https://github.com/cesarschutz/desafios-tecnicos-MBA-IA.git
 cd desafios-tecnicos-MBA-IA
 ```
 
-#### 2️⃣ Configure o Ambiente Virtual
+#### 2️⃣ Acesse a Pasta do Projeto
+
+```bash
+# Navegue até a pasta específica deste projeto
+cd "Ingestão e busca semântica com LangChain e PostgreSQL"
+```
+
+#### 3️⃣ Configure o Ambiente Virtual
 
 ```bash
 # Criar ambiente virtual
@@ -82,15 +89,15 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-#### 3️⃣ Instale as Dependências
+#### 4️⃣ Instale as Dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 4️⃣ Configure as Variáveis de Ambiente
+#### 5️⃣ Configure as Variáveis de Ambiente
 
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+Crie um arquivo `.env` na raiz do projeto (copie do `.env.example` se disponível) com as seguintes variáveis:
 
 ```env
 # OpenAI Configuration
@@ -101,13 +108,13 @@ OPENAI_EMBEDDING_MODEL=text-embedding-3-small
 DATABASE_URL=postgresql://postgres:postgres@localhost:5432/rag
 PG_VECTOR_COLLECTION_NAME=documents
 
-# Optional: Path for testing
-PDF_PATH=document.pdf
+# Optional: Path for testing (exemplo com caminho completo)
+PDF_PATH=/Users/seu-usuario/Downloads/relatorio-exemplo.pdf
 ```
 
 > 💡 **Dica**: Obtenha sua API Key em [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 
-#### 5️⃣ Inicie o Banco de Dados
+#### 6️⃣ Inicie o Banco de Dados
 
 ```bash
 # Iniciar PostgreSQL com pgvector
@@ -148,7 +155,8 @@ $ python src/chat.py
 └─ add doc
 
 📁 Digite o caminho do documento:
-└─ ./relatorio-financeiro.pdf
+└─ /Users/cesar/Documents/relatorio-financeiro.pdf
+# ou caminho relativo: ./documents/relatorio-financeiro.pdf
 -> PDF processado com sucesso!
 
 # 3. Faça perguntas
@@ -164,17 +172,18 @@ $ python src/chat.py
 
 ```
 desafios-tecnicos-MBA-IA/
-│
-├── 📂 src/                     # Código fonte principal
-│   ├── 📄 chat.py              # Interface CLI e loop principal
-│   ├── 📄 ingest.py            # Processamento e ingestão de PDFs
-│   └── 📄 search.py            # Busca semântica e geração de prompts
-│
-├── 📄 docker-compose.yml       # Configuração do PostgreSQL + pgvector
-├── 📄 requirements.txt         # Dependências Python
-├── 📄 .env                     # Variáveis de ambiente (criar localmente)
-├── 📄 document.pdf             # Documento exemplo para testes
-└── 📄 README.md               # Este arquivo
+└── 📂 Ingestão e busca semântica com LangChain e PostgreSQL/
+    │
+    ├── 📂 src/                     # Código fonte principal
+    │   ├── 📄 chat.py              # Interface CLI e loop principal
+    │   ├── 📄 ingest.py            # Processamento e ingestão de PDFs
+    │   └── 📄 search.py            # Busca semântica e geração de prompts
+    │
+    ├── 📄 docker-compose.yml       # Configuração do PostgreSQL + pgvector
+    ├── 📄 requirements.txt         # Dependências Python
+    ├── 📄 .env                     # Variáveis de ambiente (criar localmente)
+    ├── 📄 document.pdf             # Documento exemplo para testes
+    └── 📄 README.md                # Este arquivo
 ```
 
 ## 🛠️ Stack Tecnológica
@@ -230,3 +239,48 @@ temperature=0.5  # Criatividade das respostas (0-1)
 - Requer conexão com API OpenAI
 - Custo por token processado
 - Limite de contexto do modelo LLM
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Faça um Fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
+5. Abra um Pull Request
+
+## 🆘 Troubleshooting
+
+### Problema: "Connection refused" ao conectar com PostgreSQL
+**Solução**: Verifique se o Docker está rodando e execute `docker-compose up -d`
+
+### Problema: "Invalid API Key"
+**Solução**: Verifique se a chave OpenAI no arquivo `.env` está correta
+
+### Problema: PDF não é processado
+**Solução**: Verifique se o arquivo é um PDF válido e não está corrompido
+
+### Problema: "ModuleNotFoundError"
+**Solução**: Certifique-se de que o ambiente virtual está ativado e execute `pip install -r requirements.txt`
+
+### Problema: "Erro ao carregar variáveis de ambiente"
+**Solução**: Verifique se o arquivo `.env` existe na raiz do projeto e contém todas as variáveis necessárias
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📧 Contato
+
+Para dúvidas, sugestões ou problemas, abra uma [issue](https://github.com/cesarschutz/desafios-tecnicos-MBA-IA/issues) no GitHub.
+
+---
+
+<div align="center">
+  
+  Desenvolvido com ❤️ para o MBA em Inteligência Artificial da Full Cycle
+  
+  ⭐ Star este repositório se foi útil!
+  
+</div>
